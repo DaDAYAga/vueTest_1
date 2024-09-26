@@ -1,1 +1,6 @@
 @import './base.scss';
+@import './mixin.scss';
+
+body {
+    background-color: var(--bodyColor);
+}

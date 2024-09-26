@@ -1,0 +1,17 @@
+:root {
+    --bodyColorLight: #ff0000;
+    --bodyColorDark: #000000;
+
+    --HeaderColorLight: #cccccc;
+    --HeaderColorDark: #4b4b4b;
+}
+
+html[dark='true']:root {
+    --bodyColor: var(--bodyColorDark);
+    --HeaderColor: var(--HeaderColorDark);
+}
+
+html[dark='false']:root {
+    --bodyColor: var(--bodyColorLight);
+    --HeaderColor: var(--HeaderColorLight);
+}
