@@ -1,19 +1,16 @@
 <script setup>
-import { ref } from 'vue'
-
-// 日夜模式
-const isDark = ref(false)
-
-const changeMode = () => {
-    isDark.value = !isDark.value
-    document.querySelector('html').setAttribute('dark', isDark.value)
-}
+import DarkModeButton from './button/DarkModeButton.vue'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
     <header>
         <div class="wrapper">
-            <button @click="changeMode">change</button>
+            <nav class="headerList">
+                <RouterLink to="/">Home</RouterLink>
+                <RouterLink to="/about">About</RouterLink>
+            </nav>
+            <DarkModeButton />
         </div>
     </header>
 </template>

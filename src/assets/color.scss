@@ -1,17 +1,33 @@
 :root {
+    // body
     --bodyColorLight: #ff0000;
     --bodyColorDark: #000000;
+    --bodyColor: var(--bodyColorLight);
 
-    --HeaderColorLight: #cccccc;
-    --HeaderColorDark: #4b4b4b;
+    // header
+    --headerColorLight: #cccccc;
+    --headerColorDark: #4b4b4b;
+    --headerColor: var(--headerColorLight);
+
+    // darkButton
+    --darkButtonColorLight: #e4e4e4;
+    --darkButtonColorDark: #383838;
+    --darkButtonColor: var(--darkButtonColorLight);
+    --darkButtonIconColorLight: #ffffff;
+    --darkButtonIconColorDark: #888888;
+    --darkButtonIconColor: var(--darkButtonIconColorLight);
 }
 
 html[dark='true']:root {
     --bodyColor: var(--bodyColorDark);
-    --HeaderColor: var(--HeaderColorDark);
+    --headerColor: var(--headerColorDark);
+    --darkButtonColor: var(--darkButtonColorDark);
+    --darkButtonIconColor: var(--darkButtonIconColorDark);
 }
 
 html[dark='false']:root {
     --bodyColor: var(--bodyColorLight);
-    --HeaderColor: var(--HeaderColorLight);
+    --headerColor: var(--headerColorLight);
+    --darkButtonColor: var(--darkButtonColorLight);
+    --darkButtonIconColor: var(--darkButtonIconColorLight);
 }

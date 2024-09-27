@@ -11,3 +11,28 @@
     flex-direction: $flexDirection;
     flex-wrap: $flexWrap;
 }
+
+@mixin position(
+    $position: relative,
+    $top: unset,
+    $left: unset,
+    $right: unset,
+    $bottom: unset,
+    $translateX: 0,
+    $translateY: 0,
+    $zIndex: 1
+) {
+    position: $position;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    transform: translate($translateX, $translateY);
+    z-index: $zIndex;
+}
+
+@mixin transition($time: 0.5s, $delay: 0s, $timingFunction: ease-in-out) {
+    transition: all $time;
+    transition-delay: $delay;
+    transition-timing-function: $timingFunction;
+}
