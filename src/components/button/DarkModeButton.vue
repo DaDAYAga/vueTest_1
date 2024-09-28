@@ -1,18 +1,14 @@
 <script setup>
-import { ref } from 'vue'
 import IconMoon from '../icons/IconMoon.vue'
 import IconSun from '../icons/IconSun.vue'
-// 日夜模式
-const isDark = ref(false)
 
-const changeMode = () => {
-    isDark.value = !isDark.value
-    document.querySelector('html').setAttribute('dark', isDark.value)
-}
+defineProps({
+    dark: Boolean
+})
 </script>
 
 <template>
-    <button :class="['darkButton', { isDark: isDark }]" @click="changeMode">
+    <button :class="['darkButton', { isDark: dark }]">
         <i>
             <IconMoon />
             <IconSun />

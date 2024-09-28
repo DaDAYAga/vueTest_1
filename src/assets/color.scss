@@ -5,17 +5,25 @@
     --bodyColor: var(--bodyColorLight);
 
     // header
-    --headerColorLight: #cccccc;
-    --headerColorDark: #4b4b4b;
+    --headerColorLight: #a4dcef;
+    --headerColorDark: #333333;
     --headerColor: var(--headerColorLight);
+
+    // lineColor
+    --lineColor: #cccccc;
 
     // darkButton
     --darkButtonColorLight: #e4e4e4;
-    --darkButtonColorDark: #383838;
+    --darkButtonColorDark: #131313;
     --darkButtonColor: var(--darkButtonColorLight);
     --darkButtonIconColorLight: #ffffff;
     --darkButtonIconColorDark: #888888;
     --darkButtonIconColor: var(--darkButtonIconColorLight);
+
+    // SearchButton
+    --searchButtonColorLight: #51a1b4;
+    --searchButtonColorDark: #5c5c5c;
+    --searchButtonColor: var(--searchButtonColorLight);
 }
 
 html[dark='true']:root {
@@ -23,6 +31,7 @@ html[dark='true']:root {
     --headerColor: var(--headerColorDark);
     --darkButtonColor: var(--darkButtonColorDark);
     --darkButtonIconColor: var(--darkButtonIconColorDark);
+    --searchButtonColor: var(--searchButtonColorDark);
 }
 
 html[dark='false']:root {
@@ -30,4 +39,5 @@ html[dark='false']:root {
     --headerColor: var(--headerColorLight);
     --darkButtonColor: var(--darkButtonColorLight);
     --darkButtonIconColor: var(--darkButtonIconColorLight);
+    --searchButtonColor: var(--searchButtonColorLight);
 }

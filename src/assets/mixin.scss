@@ -31,8 +31,16 @@
     z-index: $zIndex;
 }
 
-@mixin transition($time: 0.5s, $delay: 0s, $timingFunction: ease-in-out) {
+@mixin transition(
+    $time: 0.5s,
+    $delay: 0s,
+    $timingFunction: ease-in-out
+) {
     transition: all $time;
     transition-delay: $delay;
     transition-timing-function: $timingFunction;
+}
+
+.shadowInset {
+    box-shadow: 0 -5px 15px 0 rgba(0, 0, 0, 0.3) inset;
 }
