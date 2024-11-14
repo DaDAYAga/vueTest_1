@@ -31,6 +31,24 @@
     z-index: $zIndex;
 }
 
+@mixin pseudoBefore($content: "") {
+    
+    &::before {
+        content: $content;
+        position: absolute;
+        @content;
+    }
+}
+
+@mixin pseudoAfter($content: "") {
+    
+    &::after {
+        content: $content;
+        position: absolute;
+        @content;
+    }
+}
+
 @mixin transition(
     $time: 0.5s,
     $delay: 0s,

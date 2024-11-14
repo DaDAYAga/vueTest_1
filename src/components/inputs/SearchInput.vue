@@ -20,6 +20,7 @@ import IconSearch from '../icons/IconSearch.vue';
         height: 30px;
         background: #ffffff;
         border-radius: 5px 0 0 5px;
+        padding-left: 5px;
     }
 
     button {

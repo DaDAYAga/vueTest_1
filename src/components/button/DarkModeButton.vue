@@ -1,14 +1,18 @@
 <script setup>
 import IconMoon from '../icons/IconMoon.vue'
 import IconSun from '../icons/IconSun.vue'
+import { useThemeStore } from '@/stores/themeStore';
 
-defineProps({
-    dark: Boolean
-})
+const themeStore = useThemeStore();
+
+const toggleMode = () => {
+    themeStore.toggleDarkMode();
+    document.querySelector('html').setAttribute('dark', themeStore.isDark);
+}
 </script>
 
 <template>
-    <button :class="['darkButton', { isDark: dark }]">
+    <button :class="['darkButton', { isDark: themeStore.isDark }]" @click="toggleMode">
         <i>
             <IconMoon />
             <IconSun />
@@ -26,10 +30,12 @@ defineProps({
     @include transition(0.3s);
 
     &.isDark {
+
         i {
             margin: 0;
 
             :deep(svg) {
+                
                 &:nth-of-type(1) {
                     transform: translate(-50%, -50%);
                     opacity: 1;

@@ -12,6 +12,14 @@
     // lineColor
     --lineColor: #cccccc;
 
+    // linkColor
+    --linkColorLight: #4d4d4d;
+    --linkColorDark: #b3b3b3;
+    --linkColor: var(--linkColorLight);
+    --linkHoverColorLight: #000000;
+    --linkHoverColorDark: #ffffff;
+    --linkHoverColor: var(--linkHoverColorLight);
+
     // darkButton
     --darkButtonColorLight: #e4e4e4;
     --darkButtonColorDark: #131313;
@@ -32,6 +40,8 @@ html[dark='true']:root {
     --darkButtonColor: var(--darkButtonColorDark);
     --darkButtonIconColor: var(--darkButtonIconColorDark);
     --searchButtonColor: var(--searchButtonColorDark);
+    --linkColor: var(--linkColorDark);
+    --linkHoverColor: var(--linkHoverColorDark);
 }
 
 html[dark='false']:root {
@@ -40,4 +50,6 @@ html[dark='false']:root {
     --darkButtonColor: var(--darkButtonColorLight);
     --darkButtonIconColor: var(--darkButtonIconColorLight);
     --searchButtonColor: var(--searchButtonColorLight);
+    --linkColor: var(--linkColorLight);
+    --linkHoverColor: var(--linkHoverColorLight);
 }

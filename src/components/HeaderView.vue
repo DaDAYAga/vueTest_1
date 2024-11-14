@@ -1,17 +1,14 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 import { useThemeStore } from '@/stores/themeStore';
-import DarkModeButton from './button/DarkModeButton.vue'
+import NavLink from './NavLink.vue';
+// import DarkModeButton from './button/DarkModeButton.vue'
+import LoginAndRegisterButton from './button/LoginAndRegisterButton.vue';
+import UserAvatar from './user/UserAvatar.vue';
 import IconLogo from './icons/IconLogo.vue';
 import SearchInput from './inputs/SearchInput.vue';
 
 // 日夜模式
 const themeStore = useThemeStore();
-
-const toggleMode = () => {
-    themeStore.toggleDarkMode();
-    document.querySelector('html').setAttribute('dark', themeStore.isDark);
-}
 </script>
 
 <template>
@@ -22,11 +19,12 @@ const toggleMode = () => {
                 <SearchInput />
             </div>
             <div class="rightWrap">
-                <nav class="headerList">
-                    <RouterLink to="/">Home</RouterLink>
-                    <RouterLink to="/about">About</RouterLink>
-                </nav>
-                <DarkModeButton :dark="themeStore.isDark" @click="toggleMode" />
+                <div class="topBox">
+                    <UserAvatar />
+                    <LoginAndRegisterButton />
+                </div>
+                <NavLink position="header" />
+                <!-- <DarkModeButton /> -->
             </div>
         </div>
     </header>
@@ -57,6 +55,31 @@ header {
 
             :deep(.searchBox) {
                 margin-top: 10px;
+            }
+        }
+
+        .rightWrap {
+            height: 100%;
+            padding: 10px 0;
+            @include flex($flexDirection: column, $justifyContent: space-between, $alignItems: flex-end);
+
+            .topBox {
+                @include flex($alignItems: center);
+
+                :deep(.userAvatar) {
+                    margin-right: 30px;
+                    @include position;
+                    @include pseudoBefore() {
+                        width: 1px;
+                        height: 80%;
+                        background: var(--linkColor);
+                        @include position($position: absolute, $right: -18px, $top: 50%, $translateY: -50%);
+                    };
+                }
+            }
+
+            .headerList {
+
             }
         }
     }
