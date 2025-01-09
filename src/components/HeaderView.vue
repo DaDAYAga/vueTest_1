@@ -1,11 +1,11 @@
 <script setup>
 import { useThemeStore } from '@/stores/themeStore';
 import NavLink from './NavLink.vue';
-// import DarkModeButton from './button/DarkModeButton.vue'
-import LoginAndRegisterButton from './button/LoginAndRegisterButton.vue';
+import LoginAndRegisterButton from './user/LoginAndRegister.vue';
 import UserAvatar from './user/UserAvatar.vue';
 import IconLogo from './icons/IconLogo.vue';
 import SearchInput from './inputs/SearchInput.vue';
+import SlideMenu from './slideMenu/SlideMenu.vue';
 
 // 日夜模式
 const themeStore = useThemeStore();
@@ -22,9 +22,9 @@ const themeStore = useThemeStore();
                 <div class="topBox">
                     <UserAvatar />
                     <LoginAndRegisterButton />
+                    <SlideMenu />
                 </div>
                 <NavLink position="header" />
-                <!-- <DarkModeButton /> -->
             </div>
         </div>
     </header>
@@ -76,10 +76,10 @@ header {
                         @include position($position: absolute, $right: -18px, $top: 50%, $translateY: -50%);
                     };
                 }
-            }
 
-            .headerList {
-
+                :deep(.slideMenuBox) {
+                    margin-left: 20px;
+                }
             }
         }
     }

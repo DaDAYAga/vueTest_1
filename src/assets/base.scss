@@ -28,3 +28,16 @@ input {
     border: none;
     outline: none;
 }
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.5s all;
+}

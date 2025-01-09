@@ -32,6 +32,11 @@
     --searchButtonColorLight: #51a1b4;
     --searchButtonColorDark: #5c5c5c;
     --searchButtonColor: var(--searchButtonColorLight);
+
+    // module
+    --moduleBgColorLight: #f7f7f7;
+    --moduleBgColorDark: #1f1f1f;
+    --moduleBgColor: var(--moduleBgColorLight);
 }
 
 html[dark='true']:root {
@@ -42,6 +47,7 @@ html[dark='true']:root {
     --searchButtonColor: var(--searchButtonColorDark);
     --linkColor: var(--linkColorDark);
     --linkHoverColor: var(--linkHoverColorDark);
+    --moduleBgColor: var(--moduleBgColorDark);
 }
 
 html[dark='false']:root {
@@ -52,4 +58,5 @@ html[dark='false']:root {
     --searchButtonColor: var(--searchButtonColorLight);
     --linkColor: var(--linkColorLight);
     --linkHoverColor: var(--linkHoverColorLight);
+    --moduleBgColor: var(--moduleBgColorLight);
 }

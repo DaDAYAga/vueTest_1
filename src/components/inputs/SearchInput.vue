@@ -1,11 +1,18 @@
 <script setup>
+import { ref } from 'vue';
 import IconSearch from '../icons/IconSearch.vue';
+
+const search = ref('');
+
+const searchHandler = () => {
+    alert(`正在尋找: ${search.value}`);
+};
 </script>
 
 <template>
     <div class="searchBox">
-        <input type="text" />
-        <button>
+        <input type="text" v-model="search" />
+        <button @click="searchHandler">
             <IconSearch />
         </button>
     </div>

@@ -23,12 +23,43 @@ const navClass = computed(() => {
 
 <template>
     <nav :class="navClass">
-        <RouterLink to="/android">Android</RouterLink>
+        <ul>
+            <li>
+                <RouterLink to="/android">Android</RouterLink>
+            </li>
+            <li>
+                <RouterLink to="/ios">iOS</RouterLink>
+            </li>
+        </ul>
     </nav>
 </template>
 
 <style lang="scss" scoped>
 .headerList {
     
+    ul {
+        @include flex;
+
+        li {
+            border-right: solid 1px var(--linkColor);
+            padding-right: 10px;
+            margin-right: 10px;
+
+            &:last-child {
+                border: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            a {
+                color: var(--linkColor);
+                font-size: 13px;
+                
+                &:hover {
+                    color: var(--linkHoverColor);
+                }
+            }
+        }
+    }
 }
 </style>
