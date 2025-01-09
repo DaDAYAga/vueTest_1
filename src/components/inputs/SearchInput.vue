@@ -5,7 +5,14 @@ import IconSearch from '../icons/IconSearch.vue';
 const search = ref('');
 
 const searchHandler = () => {
-    alert(`正在尋找: ${search.value}`);
+    if(search.value === '') {
+        alert('請輸入搜尋內容');
+        return;
+    } else {
+        alert(`正在尋找: ${search.value}`);
+    }
+
+    search.value = '';
 };
 </script>
 
